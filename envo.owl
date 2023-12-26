@@ -127,4 +127,6 @@
 <owl:Class rdf:about="#River">
   <rdfs:subClassOf rdf:resource="#Liquid"/>
 </owl:Class>
+
+
 </rdf:RDF>

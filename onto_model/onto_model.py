@@ -33,6 +33,8 @@ with onto:
         pass
     class Image(owl.Thing):
         pass
+    class Empty(owl.Nothing):
+        pass
     class hasX(owl.DataProperty, owl.FunctionalProperty):
         domain = [onto.Terrene]
         range = [float]
@@ -59,6 +61,7 @@ onto.save()
 
 class IndividualGenerator():
     class_map = {
+        0: (Empty, "empty"),
         1: (Willow,"willow"),
         2: (Poplar,"poplar"),
         3: (Maple,"maple"),
