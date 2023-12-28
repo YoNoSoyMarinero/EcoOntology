@@ -69,6 +69,7 @@ class SPARQL:
     
     @classmethod
     def get_individuals_by_condition(cls, 
+                                     image_name: str,
                                      class_name: str = "Terrene",
                                      x1: int = 0,
                                      y1: int = 0,
@@ -85,7 +86,9 @@ class SPARQL:
             ?class eco:hasY ?y .
             ?class eco:hasPercentage ?p .
             ?class eco:hasImage ?image.
+            ?image eco:hasImageUri ?imageUri.
             FILTER (?x >= {x1} && ?x <= {x2} && ?y >= {y1} && ?y <= {y2} && ?p >= {min_percentage} && ?p <= {max_percentage})
+            FILTER (STRENDS(STR(?imageUri), "{image_name}"))
         }}
     """
         return list(owl.default_world.sparql(query))

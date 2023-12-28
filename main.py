@@ -15,3 +15,4 @@ def create_terrene_individuals(image: np.array, image_name: str, x: int, y: int)
         IndividualGenerator.create_terrene_individual(x, y, value, key, image_name)
 
 
+
